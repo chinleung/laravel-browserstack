@@ -278,14 +278,11 @@ trait RunsOnBrowserStack
      */
     protected function getBuildName(): string
     {
-        $sha = env('GITHUB_SHA');
-
-        if ($sha === null) {
-            return gethostname();
-        }
+        $sha = env('GITHUB_SHA') ?? exec('git rev-parse HEAD');
 
         return sprintf(
-            '%s @ %s',
+            '%s — %s — %s',
+            gethostname(),
             str_replace('refs', '', $sha),
             env('GITHUB_REF', config('app.env'))
         );
@@ -308,23 +305,14 @@ trait RunsOnBrowserStack
     {
         $class = get_called_class();
 
-        $traces = collect(debug_backtrace());
-
-        $pest = $traces->where('class', 'Pest\Kernel')->first();
-
-        if ($pest) {
-            $function = Str::after(Arr::get($pest, 'args.0.4'), '::');
-        } else {
-            $function = Arr::get(
-                $traces->firstWhere('class', $class),
-                'function'
-            );
-        }
+        $name = Str::of($this->name())
+            ->after('__pest_evaluable_')
+            ->replace('_', ' ');
 
         return sprintf(
             '%s @ %s',
             class_basename($class),
-            $function ?? 'Unknown function'
+            $name->toString()
         );
     }
 
