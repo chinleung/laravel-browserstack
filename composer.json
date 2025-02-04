@@ -20,15 +20,11 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^8.2",
         "browserstack/browserstack-local": "^1.1",
-        "guzzlehttp/guzzle": "^6.5|^7.0",
-        "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
-        "laravel/dusk": "^5.9|^6.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "3.8.*",
-        "phpunit/phpunit": "^8.0"
+        "guzzlehttp/guzzle": "^7.2",
+        "illuminate/support": "^11.0",
+        "laravel/dusk": "^8.2"
     },
     "autoload": {
         "psr-4": {
@@ -43,7 +39,6 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true

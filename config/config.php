@@ -44,6 +44,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | The configuration for capabilities of the browser.
+    |
     | https://www.browserstack.com/automate/capabilities
     |
     */
