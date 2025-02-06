@@ -278,13 +278,13 @@ trait RunsOnBrowserStack
      */
     protected function getBuildName(): string
     {
-        $sha = env('GITHUB_SHA') ?? exec('git rev-parse HEAD');
-
         return sprintf(
             '%s — %s — %s',
             gethostname(),
-            str_replace('refs', '', $sha),
-            env('GITHUB_REF', config('app.env'))
+            Str::of(env('GITHUB_SHA') ?? exec('git rev-parse HEAD'))
+                ->substr(0, 7),
+            Str::of(env('GITHUB_REF', config('app.env')))
+                ->replace('refs/heads/', '')
         );
     }
 
