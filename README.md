@@ -59,7 +59,10 @@ You can find below the list of available slugs for the browser option.
 
 <details>
   <summary>Windows</summary>
-  
+
+- WINDOWS_11_EDGE
+- WINDOWS_11_CHROME
+- WINDOWS_11_FIREFOX
 - WINDOWS_10_IE
 - WINDOWS_10_EDGE
 - WINDOWS_10_CHROME
@@ -84,7 +87,19 @@ You can find below the list of available slugs for the browser option.
 
 <details>
   <summary>OS X</summary>
-  
+
+- MACOS_SEQUOIA_SAFARI
+- MACOS_SEQUOIA_CHROME
+- MACOS_SEQUOIA_FIREFOX
+- MACOS_SEQUOIA_EDGE
+- MACOS_SONOMA_SAFARI
+- MACOS_SONOMA_CHROME
+- MACOS_SONOMA_FIREFOX
+- MACOS_SONOMA_EDGE
+- MACOS_VENTURA_SAFARI
+- MACOS_VENTURA_CHROME
+- MACOS_VENTURA_FIREFOX
+- MACOS_VENTURA_EDGE
 - MACOS_MONTEREY_SAFARI
 - MACOS_MONTEREY_CHROME
 - MACOS_MONTEREY_FIREFOX
